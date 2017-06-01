@@ -12,9 +12,24 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <h1 class="title">Hello</h1>
-    <h1 class="title">How are you {{ name }}?</h1>
-    <p>Today is: {{ current_date }}</p>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4">
+                <h1 class="title">Наш магазин скоро откроется</h1>
+                <h1 class="title">оставляйте ваш e-mail в форме ниже</h1>
+                <div>
+                    <form action="" method="POST"> {% csrf_token %}
+                         {{ form.as_p }}
+                        <div>
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

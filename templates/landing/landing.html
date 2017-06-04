@@ -8,24 +8,33 @@
 
      <!-- Bootstrap-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400" rel="stylesheet">
      <!-- Custom styles -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
+
 </head>
 <body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-lg-offset-4">
-                <h1 class="title">Наш магазин скоро откроется</h1>
-                <h1 class="title">оставляйте ваш e-mail в форме ниже</h1>
-                <div>
-                    <form action="" method="POST"> {% csrf_token %}
-                         {{ form.as_p }}
-                        <div>
-                            <button type="submit" class="btn btn-primary">Отправить</button>
-                        </div>
-                    </form>
-
+    <div class="general-container">
+        <div class="container top-container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h1 class="title">Наш магазин скоро откроется<br>
+                        оставляйте ваш e-mail в форме ниже</h1>
+                    <div>
+                        <form action="" method="POST" class="form-inline text-center"> {% csrf_token %}
+                            <label>Ваш e-mail: </label>
+                            <div class="form-group">
+                                 <input type="email" name ="{{ form.email.name }}" class="form-control">
+                            </div>
+                            <label>Ваше имя: </label>
+                            <div class="form-group">
+                                <input type="text" name ="{{ form.name.name }}" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-orange">Отправить</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

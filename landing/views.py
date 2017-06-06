@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
 from .forms import SubscriberForm
+from  products.models import Product
 
 def landing(request):
     name = 'Rustam'
@@ -14,3 +15,7 @@ def landing(request):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
     return render(request, 'landing/landing.html',locals())
+
+def home(request):
+    products = Product.objects.filter(is_active=True)
+    return render(request, 'landing/home.html',locals())

@@ -9,12 +9,13 @@ html, body{
     margin:20px;
 }
 .product-item{
-    height:215px;
+    height:360px;
     background-color: white;
     border:1px solid gray;
     position: relative;
     padding: 5px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .add-to-card-btn{

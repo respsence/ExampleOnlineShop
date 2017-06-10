@@ -17,13 +17,16 @@
 <body>
 
     <div class="wrapper">
-        {% include 'navbar.html' %}
-        {% block content %}
+        <div class="wrapper-container">
+            {% include 'navbar.html' %}
+            {% block content %}
 
-        {% endblock content %}
-        {% include 'footer.html' %}
+            {% endblock content %}
+
+        </div>
     </div>
 
+    {% include 'footer.html' %}
 
 
     <!-- jQuery -->

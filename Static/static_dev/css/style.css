@@ -47,8 +47,19 @@ html, body{
     text-align: center;
 }
 
+.wrapper{
+    min-height: 100%;
+}
+
+.wrapper-container{
+    overflow: auto;
+    padding-bottom: 180px;
+}
+
 .footer{
-    margin-bottom: -100px;
+    position: relative;
+    margin-bottom: -180px;
     background-color: white;
-    height:200px;
+    height:180px;
+    clear: both;
 }

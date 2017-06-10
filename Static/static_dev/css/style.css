@@ -5,15 +5,23 @@ html, body{
     background-color: #edeef0;
 }
 
-.section-top{
-    margin:20px;
+.navbar{
+    margin-bottom: 0;
 }
+.section-top{
+     margin-bottom:20px;
+}
+
+.section{
+    padding: 50px 0;
+}
+
 .product-item{
     height:360px;
     background-color: white;
     border:1px solid gray;
     position: relative;
-    padding: 5px;
+    padding: 10px 0 10px 0;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -22,4 +30,20 @@ html, body{
     position: absolute;
     bottom: 15px;
     left:50px;
+}
+.discount-container{
+    position: absolute;
+    top:30%;
+    background: #55e073;
+    width: 30%;
+    color: white;
+    font-weight: 700;
+    padding: 3px;
+
+}
+
+.footer{
+    margin-bottom: -100px;
+    background-color: white;
+    height:200px;
 }

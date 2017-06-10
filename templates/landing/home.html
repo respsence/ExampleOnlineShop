@@ -14,32 +14,14 @@
                     </h1>
                 </div>
                 {% for  product_image in products_images %}
-                     <div class="col-lg-3">
-                        <div class="product-item">
-                            <div>
-                                <img src="{{ product_image.image.url}}" class="img-responsive">
-                            </div>
-                            {% if product_image.product.discount %}
-                            <div class="discount-container">
-                                <span>{{ product_image.product.discount }}</span>
-                            </div>
-                            {% endif %}
-                           <h4>{{ product_image.product.name }}</h4>
-                            <p>
-                                {{ product_image.product.description|truncatechars_html:70 }}
-                            </p>
-                            <div>
-                                {{ product_image.product.price }}
-                            </div>
-                            <div class="add-to-card-btn">
-                                <button class="btn btn-success">
-                                    Добавить в корзину
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    {% include "landing/product_item.html" %}
                 {% endfor %}
             </div>
+        </div>
+    </div>
+    <div class="section section-delivery">
+        <div>
+            <h3>free shipping</h3>
         </div>
     </div>
     <div class="section section2 phones-container">
@@ -51,25 +33,7 @@
                     </h1>
                 </div>
                 {% for  product_image in products_images_phones %}
-                     <div class="col-lg-3">
-                        <div class="product-item">
-                            <div>
-                                <img src="{{ product_image.image.url}}" class="img-responsive">
-                            </div>
-                           <h4>{{ product_image.product.name }}</h4>
-                            <p>
-                                {{ product_image.product.description|truncatechars_html:70 }}
-                            </p>
-                            <div>
-                                {{ product_image.product.price }}
-                            </div>
-                            <div class="add-to-card-btn">
-                                <button class="btn btn-success">
-                                    Добавить в корзину
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    {% include "landing/product_item.html" %}
                 {% endfor %}
             </div>
         </div>
@@ -83,25 +47,7 @@
                     </h1>
                 </div>
                 {% for  product_image in products_images_laptops %}
-                     <div class="col-lg-3">
-                        <div class="product-item">
-                            <div>
-                                <img src="{{ product_image.image.url}}" class="img-responsive">
-                            </div>
-                           <h4>{{ product_image.product.name }}</h4>
-                            <p>
-                                {{ product_image.product.description|truncatechars_html:70 }}
-                            </p>
-                            <div>
-                                {{ product_image.product.price }}
-                            </div>
-                            <div class="add-to-card-btn">
-                                <button class="btn btn-success">
-                                    Добавить в корзину
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    {% include "landing/product_item.html" %}
                 {% endfor %}
             </div>
         </div>

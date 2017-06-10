@@ -41,6 +41,11 @@ html, body{
     padding: 3px;
 
 }
+.section-delivery{
+    height: 300px;
+    background-color: lightyellow;
+    text-align: center;
+}
 
 .footer{
     margin-bottom: -100px;

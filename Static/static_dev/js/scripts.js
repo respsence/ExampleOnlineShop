@@ -13,4 +13,23 @@ $(document).ready(function () {
         console.log(product_id);
         console.log(product_name);
     })
+    
+    function showingbasket() {
+        $('.basket-items').removeClass('hidden');
+    }
+
+    $('.basket-container').on('click', function (e) {
+        e.preventDefault();
+        showingbasket();
+    })
+
+    $('.basket-container').mouseover(function (e) {
+        e.preventDefault();
+        showingbasket();
+    })
+
+     $('.basket-container').mouseout(function (e) {
+        e.preventDefault();
+        $('.basket-items').addClass('hidden');
+    })
 })

@@ -12,10 +12,14 @@ $(document).ready(function () {
         var product_price = submit_btn.data('price');
         console.log(product_id);
         console.log(product_name);
+
+        $('.basket-items ul').append('<li>'+product_name+', '+nmb+' шт. по '+product_price +' руб '+
+            +'<a href="" class="delete-item" >X</a>'+
+            '</li>');
     })
     
     function showingbasket() {
-        $('.basket-items').removeClass('hidden');
+        $('.basket-items').toggleClass('hidden');
     }
 
     $('.basket-container').on('click', function (e) {
@@ -28,8 +32,15 @@ $(document).ready(function () {
         showingbasket();
     })
 
-     $('.basket-container').mouseout(function (e) {
+    $('.basket-container').mouseout(function (e) {
         e.preventDefault();
-        $('.basket-items').addClass('hidden');
+        showingbasket();
+    })
+
+    $(document).on('click', '.delete-item', function (e) {
+        e.preventDefault();
+        $(this).closest('li').remove();
     })
 })
+
+

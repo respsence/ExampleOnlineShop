@@ -63,3 +63,10 @@ html, body{
     height:180px;
     clear: both;
 }
+.product-description-tabs{
+    padding: 10px;
+}
+.product-image-item{
+    padding: 5px;
+    margin-bottom: 5px;
+}

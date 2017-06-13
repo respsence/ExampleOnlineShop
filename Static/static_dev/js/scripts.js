@@ -30,6 +30,7 @@ $(document).ready(function () {
             cache: true,
             success: function(data){
                 console.log("Ok");
+                console.log(data.products_total_nmb);
             },
             error: function(data){
                 console.log("Error");

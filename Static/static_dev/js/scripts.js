@@ -33,6 +33,7 @@ $(document).ready(function () {
                 console.log(data.products_total_nmb);
                 if(data.products_total_nmb){
                      $('#basket_total_nmb').text("("+data.products_total_nmb+")");
+                        console.log(data.products)
                 }
 
             },
@@ -43,7 +44,7 @@ $(document).ready(function () {
         })
 
 
-        $('.basket-items ul').append('<li>'+product_name+' ('+product_price +')'+
+        $('.basket-items ul').append('<li>'+product_name+' ('+nmb +')'+
             '</li>');
     })
     

@@ -31,6 +31,10 @@ $(document).ready(function () {
             success: function(data){
                 console.log("Ok");
                 console.log(data.products_total_nmb);
+                if(data.products_total_nmb){
+                     $('#basket_total_nmb').text("("+data.products_total_nmb+")");
+                }
+
             },
             error: function(data){
                 console.log("Error");

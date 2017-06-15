@@ -43,8 +43,7 @@ $(document).ready(function () {
         })
 
 
-        $('.basket-items ul').append('<li>'+product_name+', '+nmb+' шт. по '+product_price +' руб '+
-            +'<a href="" class="delete-item" >X</a>'+
+        $('.basket-items ul').append('<li>'+product_name+' ('+product_price +')'+
             '</li>');
     })
     

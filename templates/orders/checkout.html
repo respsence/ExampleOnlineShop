@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="text-center">Товары в корзине</h3>
+                <h5 class="text-center">Общая стоимость: {{ request.session.ProductInBasket.total_price }} руб</h5>
+                <form>
+                    <table>
+                        <thead>
+                            <tr>
+                              <th>Название товара</th>
+                              <th>Количество</th>
+                              <th>Цена за единицу</th>
+                              <th>Общая цена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             {% for item in products_in_basket %}
+                                 <tr>
+                                    <td>{{ item.product.name }}</td>
+                                    <td> <input value="{{ item.nmb }}" type="number"></td>
+                                    <td>{{ item.price_per_item }}</td>
+                                    <td>{{ item.total_price }}</td>
+                                 </tr>
+
+                             {% endfor %}
+                        </tbody>
+                    </table>
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

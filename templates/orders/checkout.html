@@ -21,8 +21,10 @@
                              {% for item in products_in_basket %}
                                  <tr>
                                     <td>{{ item.product.name }}</td>
-                                    <td><input value="{{ item.nmb }}" type="number"></td>
-                                    <td>{{ item.price_per_item }}</td>
+                                    <td><input value="{{ item.nmb }}" type="number" class="product-in-basket-nmb"></td>
+                                    <td>
+                                        <span class="product-price">{{ item.price_per_item }}</span>
+                                    </td>
                                     <td>
                                         <span class="total-product-in-basket-amount">
                                             {{ item.total_price }}

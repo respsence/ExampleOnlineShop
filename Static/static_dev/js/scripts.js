@@ -85,7 +85,19 @@ $(document).ready(function () {
         product_id = $(this).data("product_id");
         nmb = 0;
         BasketUpdating(product_id, nmb, is_delete = true)
-    })
+    });
+
+
+    function calculatingBasketAmount() {
+        var total_order_amount = 0;
+        $('.total-product-in-basket-amount').each(function () {
+            total_order_amount += parseInt($(this).text());
+
+        });
+        $('#total_order_amount').text(total_order_amount);
+    };
+
+    calculatingBasketAmount();
 })
 
 

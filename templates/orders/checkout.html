@@ -7,7 +7,26 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h3 class="text-center">Товары в корзине</h3>
                 <h5 class="text-center">Общая стоимость: {{ request.session.ProductInBasket.total_price }} руб</h5>
-                <form>
+
+                <form method="POST" class="form-horizontal">{% csrf_token %}
+
+                    <div class="form-group">
+                         <div class="col-lg-6">
+                            <label>Имя:</label>
+                            <span class="form-error">{{ form.name.errors }}</span>
+                            <input type="text" name="{{ form.name.html_name }}" class="form-control"
+                                value="{{ request.POST.name }}">
+                         </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-6">
+                             <label>Телефон:</label>
+                             <span class="form-error">{{ form.phone.errors }}</span>
+                             <input type="text" name="{{ form.phone.html_name }}" class="form-control"
+                                value="{{ request.POST.phone }}">
+                        </div>
+                    </div>
+
                     <table class="table text-center">
                         <thead>
                             <tr>
@@ -21,7 +40,8 @@
                              {% for item in products_in_basket %}
                                  <tr>
                                     <td>{{ item.product.name }}</td>
-                                    <td><input value="{{ item.nmb }}" type="number" class="product-in-basket-nmb"></td>
+                                    <td><input value="{{ item.nmb }}" type="number"
+                                               class="product-in-basket-nmb" name="products_in_basket_{{ item.id }}"></td>
                                     <td>
                                         <span class="product-price">{{ item.price_per_item }}</span>
                                     </td>

@@ -96,3 +96,6 @@ html, body{
     padding: 10px;
 
 }
+.form-error{
+    color: red;
+}

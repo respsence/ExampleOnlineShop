@@ -1,7 +1,7 @@
 from django.db import models
 from products.models import Product
 from django.db.models.signals import post_save
-
+from django.contrib.auth.models import User
 
 
 
@@ -19,6 +19,7 @@ class Status(models.Model):
         verbose_name_plural = "Статусы заказа"
 
 class Order(models.Model):
+    user = models.ForeignKey(User, blank=True, null=True, default=None)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # total price for all products in order
     customer_name = models.CharField(max_length=64, blank=True, null=True, default=None)
     customer_email = models.EmailField(blank=True, null=True, default=None)
